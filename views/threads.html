@@ -1,0 +1,96 @@
+<div class="row">
+  <div class="col-xs-12">
+    <button id="addThreadBtn" href="#" class="pull-right mar-bottom-30" data-toggle="modal" data-target="#addThread"><i class="fa fa-plus-circle fa-2x" aria-hidden="true"></i></button>
+
+
+        <!-- Add Contact Modal -->
+        <div class="modal fade formModal" id="addThread" tabindex="-1" role="dialog" aria-labelledby="addThread">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Add New Thread</h4>
+              </div>
+              <div class="modal-body input-control">
+                <form action="" name="addContact" ng-submit="addContact()">
+                  <div class="row">
+                    <div class="col-xs-12 col-sm-4">
+                      <label for="title">Thread title</label>
+                    </div>
+                    <div class="col-xs-12 col-sm-8">
+                      <input type="text" name="title" id="title" ng-required="true" ng-model="thread.title">
+                      <p class="error validationerror" ng-show="addContact.firstName.$invalid && addContact.firstName.$touched">title is required</p>
+                    </div>
+                  </div>
+
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <input ng-disabled="addContact.firstName.$invalid || addContact.lastName.$invalid" type="button" class="btn btn-primary" type="submit" value="Submit" ng-click="createThread(thread.title);">
+                  </div>
+                </form>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+  </div>
+</div>
+<div class="thread-container panel-group" id="thread-container">
+  <div ng-repeat="(thread_key, element) in threads" class="thread-container panel" >
+    <h1 class="thread-title collapsed" data-toggle="collapse" data-parent="#thread-container" data-target="#{{thread_key}}">{{element.title}}</h1>
+    <div class="thread-posts panel-collapse collapse"   id="{{thread_key}}">
+      <br><br>
+      <div class="thread " ng-repeat="(key, value) in element.content" >
+        <h4 class="post-title">
+          Test title
+        </h4>
+        <div class="post-content">
+          <div class="row">
+            <div class="col-xs-4">
+              Posted on: {{key.substring(0, key.indexOf(":"))| date:'medium'}} <br>
+              Posted by: <strong >{{key.substring(key.indexOf("(")+1, key.indexOf(")"))}}</strong>
+
+            </div>
+            <div class="col-xs-6 post-text">
+              {{value}}
+            </div>
+            <div class="col-xs-2" >
+                <i ng-show="key.split(':')[1].split('(')[0] === uid" class="fa fa-trash fa-2x" ng-click="deletePost(thread_key, key)" ></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="new-post">
+    <div class="row">
+
+      <div class="col-xs-12 col-sm-8">
+        <textarea name="replyText" id="replyText" cols="30" rows="10"></textarea>
+        <div class="btn-container">
+          <a tabindex="0" id="post" ng-click="addReply()" class="btn btn-primary">Post</a>
+        </div>
+
+      </div>
+      <div class="hidden-xs col-sm-3">
+        <div class="emoji-container">
+          <ul class="list-inline">
+            <li ng-repeat="(key, value) in emojis">
+              <a tabindex="0" class="emoji-link">
+                <img src="{{value[1]}}" alt="{{value[0]}}" ng-click="insertEmoji(key)">
+              </a>
+
+
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+
+</div>

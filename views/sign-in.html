@@ -1,0 +1,75 @@
+<div class="row mar-top-30 input-control">
+  <div class="hidden-xs col-sm-3"></div>
+  <div class="col-xs-12 col-sm-6">
+    <form class="mar-top-30" ng-show="showReg" action="" name="showRegister" >
+      <div class="row">
+        <div class="col-xs-12 col-sm-4">
+          <label for="firstName">First Name</label>
+        </div>
+        <div class="col-xs-12 col-sm-8">
+          <input type="text" name="firstName" id="firstName" ng-required="true" ng-model="register.first">
+          <p class="error validationerror" ng-show="register.firstName.$invalid && register.firstName.$touched">First Name is required</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12 col-sm-4">
+          <label for="lastName">Last Name</label>
+        </div>
+        <div class="col-xs-12 col-sm-8">
+          <input type="text" name="lastName" id="lastName" ng-required="true" ng-model="register.last">
+          <p class="error validationerror" ng-show="register.lastName.$invalid && register.lastName.$touched">Last Name is required</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12 col-sm-4">
+          <label for="phoneNum">Phone Number</label>
+        </div>
+        <div class="col-xs-12 col-sm-8">
+          <input type="text" name="phoneNum" id="phoneNum" ng-required="true" ng-model="register.phone">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12 col-sm-4">
+          <label for="address">Address</label>
+        </div>
+        <div class="col-xs-12 col-sm-8">
+          <input type="text" name="address" id="address" ng-required="true" ng-model="register.address">
+
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12 col-sm-4">
+        </div>
+        <div class="col-xs-12 col-sm-8">
+          <!-- <input type="submit" name="address" class="btn btn-primary" ng-click="register(register.first, register.last, email, password, register.address, register.phone )" value="submit" > -->
+
+
+        </div>
+      </div>
+    </form>
+
+    <div class="row">
+      <div class="col-xs-12 col-sm-4"><label for="email">Email</label></div>
+      <div class="col-xs-12 col-sm-8">
+        <input ng-model="email" id="email" type="text">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12 col-sm-4"><label for="password">Password:</label></div>
+      <div class="col-xs-12 col-sm-8">
+        <input ng-model="password" id="password" type="password">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12 col-sm-8 pull-right">
+        <a id="loginBtn" tabindex="0" ng-show="!showReg" ng-click="signin(email, password)" class="btn btn-primary">Login</a><br><br>
+        <a tabindex="0"  ng-show="!showReg" ng-click="showReg = !showReg" >Register</a>
+        <a name="address" class="btn btn-primary" ng-show="showReg" ng-click="register(register.first, register.last, email, password, register.address, register.phone )" >Register</a>
+        <p class="validationerror" hidden id="loginError">&#160;</p>
+      </div>
+    </div>
+
+
+
+  </div>
+</div>

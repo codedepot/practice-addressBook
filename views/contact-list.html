@@ -1,0 +1,198 @@
+<div class="row mar-top-30">
+  <div class="col-xs-12 col-sm-2 col-md-2 col-lg-3">
+
+  </div>
+  <div class="col-xs-12 col-sm-2 col-md-2 col-lg-3 pull-right">
+    <button id="addNewContactButton" href="#" class="pull-right" data-toggle="modal" data-target="#addNewContact"><i class="fa fa-plus-circle fa-2x" aria-hidden="true"></i></button>
+    <!-- Button trigger modal -->
+
+    <!-- Add Contact Modal -->
+    <div class="modal fade formModal" id="addNewContact" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Add New Contact</h4>
+          </div>
+          <div class="modal-body input-control">
+            <form action="" name="addContact" ng-submit="addContact()">
+              <div class="row">
+                <div class="col-xs-12 col-sm-4">
+                  <label for="firstName">First Name</label>
+                </div>
+                <div class="col-xs-12 col-sm-8">
+                  <input type="text" name="firstName" id="firstName" ng-required="true" ng-model="contact.first">
+                  <p class="error validationerror" ng-show="addContact.firstName.$invalid && addContact.firstName.$touched">First Name is required</p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-xs-12 col-sm-4">
+                  <label for="lastName">Last Name</label>
+                </div>
+                <div class="col-xs-12 col-sm-8">
+                  <input type="text" name="lastName" id="lastName" ng-required="true" ng-model="contact.last">
+                  <p class="error validationerror" ng-show="addContact.lastName.$invalid && addContact.lastName.$touched">Last Name is required</p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-xs-12 col-sm-4">
+                  <label for="phoneNum">Phone Number</label>
+                </div>
+                <div class="col-xs-12 col-sm-8">
+                  <input type="text" name="phoneNum" id="phoneNum" ng-required="true" ng-model="contact.phone">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-xs-12 col-sm-4">
+                  <label for="phoneNum">Description</label>
+                </div>
+                <div class="col-xs-12 col-sm-8">
+                  <input type="text" name="desc" id="desc" ng-required="true" ng-model="contact.description">
+
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-xs-12 col-sm-4">
+                  <label for="address">Address</label>
+                </div>
+                <div class="col-xs-12 col-sm-8">
+                  <input type="text" name="address" id="address" ng-required="true" ng-model="contact.address">
+
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-xs-12 col-sm-4">
+                  <label for="fovorite">Favorite</label>
+                </div>
+                <div class="col-xs-12 col-sm-8">
+                  <input type="checkbox" name="fav" id="fav" ng-required="true" ng-model="contact.favorite">
+              </div>
+
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <input ng-disabled="addContact.firstName.$invalid || addContact.lastName.$invalid" type="button" class="btn btn-primary" type="submit" value="Submit" ng-click="saveContact(contact.first, contact.last, contact.phone, contact.description, contact.address, contact.favorite);">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Edit Contact Modal -->
+    <div class="modal fade formModal" id="editContact" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Edit Contact</h4>
+          </div>
+          <div class="modal-body input-control">
+            <form action="" name="updateContact" ng-submit="addContact()">
+              <div class="row">
+                <div class="col-xs-12 col-sm-4">
+                  <label for="firstName">First Name</label>
+                </div>
+                <div class="col-xs-12 col-sm-8">
+                  <input type="text" name="firstName" id="firstName" ng-required="true" ng-model="updateContact.first">
+                </div>
+
+              </div>
+              <div class="row">
+                <div class="col-xs-12 col-sm-4">
+                  <label for="lastName">Last Name</label>
+                </div>
+                <div class="col-xs-12 col-sm-8">
+                  <input type="text" name="lastName" id="lastName" ng-required="true" ng-model="updateContact.last">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-xs-12 col-sm-4">
+                  <label for="phoneNum">Phone Number</label>
+                </div>
+                <div class="col-xs-12 col-sm-8">
+                  <input type="text" name="phoneNum" id="phoneNum" ng-required="true" ng-model="updateContact.phone">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-xs-12 col-sm-4">
+                  <label for="phoneNum">Description</label>
+                </div>
+                <div class="col-xs-12 col-sm-8">
+                  <input type="text" name="desc" id="desc" ng-required="true" ng-model="updateContact.description">
+
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-xs-12 col-sm-4">
+                  <label for="address">Address</label>
+                </div>
+                <div class="col-xs-12 col-sm-8">
+                  <input type="text" name="address" id="address" ng-required="true" ng-model="updateContact.address">
+
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-xs-12 col-sm-4">
+                  <label for="favorite">Favorite</label>
+                </div>
+                <div class="col-xs-12 col-sm-8">
+                  <input type="checkbox" name="fav" id="fav" ng-required="true" ng-model="updateContact.favorite">
+              </div>
+
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <input ng-disabled="" type="button" class="btn btn-primary" type="submit" value="Submit" ng-click="updateContactVals();">
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Confirm delete modal -->
+    <div class="modal fade formModal" id="deleteContactModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Delete Contact</h4>
+          </div>
+          <div class="modal-body ">
+            <p>Are you sure you want to perminantly delete this contact?</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <input ng-disabled="" type="button" class="btn btn-primary" type="submit" value="Submit" ng-click="deleteContact();">
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="col-xs-12 col-sm-8 col-md-8 col-lg-6">
+    <div class="" ng-repeat="(key, element) in list | nameSearch: searchValue">
+      <ul class="contact-list row">
+        <li class="col-xs-2 col-sm-2 col-md-2 col-lg-2 avatar"><i class="fa fa-user fa-5x"></i> </li>
+        <li class="col-xs-7 ">
+          <h4>{{element["firstName"]}} {{element.lastName}}</h4>
+          <p class="desc">{{element["description"]}} </p>
+          <p><a href="#" class="phoneNum"> Phone: {{element["phoneNum"]}}</a></p>
+        </li>
+        <li class="icons col-xs-3 col-sm-3 col-md-3 col-lg-3">
+
+          <i class="fa fa-star-o fa-2x" ng-show="element.favorite == 'false';" ng-click="setFav(key, 'true');" aria-hidden="true"></i>
+          <i class="fa fa-star fa-2x" ng-show="element.favorite == 'true';" ng-click="setFav(key, 'false');" aria-hidden="true"></i>
+          <i class="fa fa-pencil-square-o fa-2x" data-toggle="modal" data-target="#editContact" aria-hidden="true" ng-click="editContactModal(key)"></i>
+          <i class="fa fa-trash fa-2x" data-toggle="modal" data-target="#deleteContactModal" ng-click="deleteContactModalPop(key);" aria-hidden="true"></i>
+        </li>
+      </ul>
+
+    </div>
+  </div>
+
+</div>

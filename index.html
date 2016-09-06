@@ -1,0 +1,94 @@
+<!DOCTYPE HTML>
+<html ng-app="myApp">
+  <head>
+    <!--Loading liberies from local -->
+    <script src="js/lib/jquery.js"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script> -->
+    <script src="js/lib/angular.js"></script>
+    <script src="js/lib/angular-route.js"></script>
+    <script src="js/lib/bootstrap.min.js"></script>
+    <!--Loading liberies from CDNs -->
+    <script src="https://www.gstatic.com/firebasejs/3.2.1/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-database.js"></script>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBxeD9_txuYD6ZdgzNTKBmR4LmEESiKLG0&callback=initMap" async defer></script>
+
+    <script src="js/app.js"></script>
+    <script src="js/controllers/controllers.js"></script>
+    <script src="js/address-book.js"></script>
+
+    <meta name=viewport content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <!-- Firebase -->
+
+<!-- Leave out Storage -->
+<!-- <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-storage.js"></script> -->
+
+    <script>
+
+    </script>
+    <!-- <script src="https://cdn.firebase.com/js/client/2.2.4/firebase.js"></script> -->
+    <!-- <script src="https://www.gstatic.com/firebasejs/3.2.0/firebase.js"></script> -->
+    <!-- AngularFire -->
+    <!-- <script src="https://cdn.firebase.com/libs/angularfire/1.2.0/angularfire.min.js"></script> -->
+    <script src="https://cdn.firebase.com/libs/angularfire/2.0.1/angularfire.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <a href="#"><i id="home-icon"><span class="sr-only">Home Icon</span></i></a>
+
+        <form action="" class="serach-bar pull-right">
+          <input type="text" ng-model="searchValue" id="searchInputk">
+          <a href="#"><i class="fa fa-search" aria-hidden="true"></i></a>
+        </form>
+
+      </div>
+      <!-- <div class="bottom-border">
+        <ul class="nav nav-pills">
+          <li><a href="#sign-in" ng-show="currentUser === null">Sign in</a></li>
+          <li><a href="#favorite">Favorites</a></li>
+          <li><a href="#contact-list">Contact list</a></li>
+          <li><a href="#map">Map</a></li>
+          <li><a href="#threads">Threads</a></li>
+          <li><a href="#notifications">Notifications</a></li>
+          <li><a href="#settings">Settings</a></li>
+          <li><a href="#sign-out" ng-show="currentUser !== null">Logout</a></li>
+        </ul>
+      </div> -->
+      <nav class="bottom-border navbar">
+        <div class="nav ">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+          </div>
+          <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav">
+              <li ng-show="currentUser === null"><a href="#sign-in">Sign in</a></li>
+              <li ng-show="currentUser !== null"><a href="#favorite">Favorites</a></li>
+              <li ng-show="currentUser !== null"><a href="#contact-list">Contact list</a></li>
+              <li ng-show="currentUser !== null"><a href="#map">Map</a></li>
+              <li ng-show="currentUser !== null"><a href="#threads">Threads</a></li>
+              <!-- <li ng-show="currentUser !== null"><a href="#notifications">Notifications</a></li> -->
+              <li ng-show="currentUser !== null"><a href="#settings">Settings</a></li>
+              <li ng-show="currentUser !== null"><a href="#sign-out" >Logout</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <main id="mainTag" ng-view>
+      </main>
+    </div>
+
+
+
+
+  </body>
+</html>

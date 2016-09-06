@@ -1,0 +1,284 @@
+@font-face {
+  font-family: 'FontAwesome';
+  src: url("/fonts/FontAwesome.eot");
+  src: url("/fonts/FontAwesome.eot?#iefix") format("embedded-opentype"), url("/fonts/FontAwesome-webfont.woff") format("woff"), url("/fonts/FontAwesome-webfont.ttf") format("truetype"), url("/fonts/FontAwesome-webfont.svg#FontAwesome") format("svg");
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* line 24, ../scss/styles.scss */
+.header {
+  border-bottom: 10px solid #0099ff;
+  margin-top: 20px;
+}
+/* line 28, ../scss/styles.scss */
+.header #home-icon {
+  display: inline-block;
+  background-color: #0099ff;
+  border-radius: 5px;
+  padding: 0 20px;
+  position: relative;
+  top: 10px;
+  margin-left: 20px;
+}
+/* line 36, ../scss/styles.scss */
+.header #home-icon:before {
+  font-family: FontAwesome;
+  content: '\f015';
+  font-size: 30px;
+  font-style: normal;
+  color: white;
+}
+/* line 45, ../scss/styles.scss */
+.header form {
+  margin-right: 20px;
+}
+/* line 47, ../scss/styles.scss */
+.header form input[type='text'] {
+  border-radius: 5px;
+  height: 30px;
+  border: 2px solid #0099ff;
+  margin-top: 14px;
+}
+/* line 53, ../scss/styles.scss */
+.header form a {
+  position: relative;
+  right: 25px;
+  opacity: 0.5;
+}
+/* line 57, ../scss/styles.scss */
+.header form a:hover {
+  opacity: 1;
+}
+
+/* line 64, ../scss/styles.scss */
+nav > .nav {
+  width: 100%;
+  display: table;
+}
+/* line 67, ../scss/styles.scss */
+nav > .nav .navbar-nav {
+  margin: auto;
+  float: none;
+  display: table;
+}
+@media (max-width: 1024px) {
+  /* line 67, ../scss/styles.scss */
+  nav > .nav .navbar-nav {
+    float: left;
+  }
+  /* line 73, ../scss/styles.scss */
+  nav > .nav .navbar-nav > li {
+    border-top: #0099ff 5px solid;
+  }
+}
+/* line 77, ../scss/styles.scss */
+nav > .nav .navbar-nav > li {
+  margin-left: 0 !important;
+}
+/* line 79, ../scss/styles.scss */
+nav > .nav .navbar-nav > li > a {
+  border-left: 5px solid white;
+  border-right: 5px solid white;
+  border-radius: 0;
+  font-size: 18px;
+  padding: 20px 16px;
+}
+/* line 87, ../scss/styles.scss */
+nav > .nav .navbar-nav > li > a:hover, nav > .nav .navbar-nav > li > a:focus {
+  border-left: 5px solid #0099ff;
+  border-right: 5px solid #0099ff;
+  background-color: white;
+}
+
+/* line 98, ../scss/styles.scss */
+.navbar-toggle .icon-bar {
+  background-color: #0099ff;
+}
+
+/* line 101, ../scss/styles.scss */
+.bottom-border {
+  border-bottom: 10px solid #0099ff;
+}
+
+/* line 106, ../scss/styles.scss */
+.contact-list {
+  background-color: rgba(228, 238, 243, 0.5);
+  padding: 10px 0;
+  border-radius: 10px;
+}
+/* line 110, ../scss/styles.scss */
+.contact-list:hover {
+  transform: scale(1.02);
+}
+/* line 113, ../scss/styles.scss */
+.contact-list > li {
+  display: inline-block;
+}
+/* line 115, ../scss/styles.scss */
+.contact-list > li.avatar {
+  text-align: center;
+}
+/* line 118, ../scss/styles.scss */
+.contact-list > li h4 {
+  text-transform: capitalize;
+}
+/* line 121, ../scss/styles.scss */
+.contact-list > li.icons {
+  text-align: right;
+}
+/* line 124, ../scss/styles.scss */
+.contact-list > li.icons i {
+  color: #023e7b;
+  padding: 5px;
+  cursor: pointer;
+}
+/* line 129, ../scss/styles.scss */
+.contact-list > li.icons i:hover {
+  color: #0099ff;
+}
+/* line 133, ../scss/styles.scss */
+.contact-list > li .desc {
+  font-style: italic;
+}
+/* line 136, ../scss/styles.scss */
+.contact-list > li .phoneNum {
+  border-radius: 10px;
+  padding: 0 10px;
+  background-color: #e4eef3;
+}
+/* line 140, ../scss/styles.scss */
+.contact-list > li .phoneNum:hover {
+  text-decoration: none;
+  font-weight: bold;
+}
+/* line 144, ../scss/styles.scss */
+.contact-list > li .phoneNum:before {
+  content: "\f095";
+  font-family: FontAwesome;
+}
+
+/* line 153, ../scss/styles.scss */
+#addNewContactButton, #addThreadBtn {
+  background-color: #e4eef3;
+  border: none;
+  color: #023e7b;
+  border-radius: 5px;
+  padding: 5px 10px;
+}
+
+/* line 161, ../scss/styles.scss */
+.input-control input[type='text'], .input-control input[type='password'] {
+  height: 40px;
+  width: 100%;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+/* line 168, ../scss/styles.scss */
+.input-control label {
+  display: table-cell;
+  vertical-align: middle;
+  height: 40px;
+}
+/* line 173, ../scss/styles.scss */
+.input-control input {
+  height: 40px;
+}
+
+/* line 177, ../scss/styles.scss */
+.validationerror {
+  background-color: maroon;
+  color: white;
+  padding: 5px;
+  font-weight: bold;
+}
+
+/* line 185, ../scss/styles.scss */
+#map {
+  height: 600px;
+  width: 80%;
+  margin: auto;
+}
+
+/* line 191, ../scss/styles.scss */
+.thread-container {
+  background-color: rgba(228, 238, 243, 0.5);
+  padding: 10px;
+}
+/* line 194, ../scss/styles.scss */
+.thread-container > h1.thread-title {
+  border-top: 5px solid #0099ff;
+  border-bottom: 5px solid #0099ff;
+  padding: 10px 0;
+  margin-bottom: 30px;
+  cursor: pointer;
+}
+/* line 200, ../scss/styles.scss */
+.thread-container > h1.thread-title:before {
+  font-family: FontAwesome;
+  content: "\f147 ";
+  margin-right: 10px;
+}
+/* line 205, ../scss/styles.scss */
+.thread-container > h1.thread-title.collapsed:before {
+  font-family: FontAwesome;
+  content: "\f196 ";
+}
+/* line 211, ../scss/styles.scss */
+.thread-container .thread {
+  padding: 10px;
+  border-radius: 10px;
+}
+/* line 214, ../scss/styles.scss */
+.thread-container .thread:nth-child(2n) {
+  background-color: white;
+}
+/* line 218, ../scss/styles.scss */
+.thread-container .post-title {
+  border-bottom: 5px solid #7fc8f9;
+  margin: 0;
+}
+/* line 223, ../scss/styles.scss */
+.thread-container .post-content {
+  padding: 10px;
+}
+
+/* line 228, ../scss/styles.scss */
+.new-post .emoji-container {
+  height: 200px;
+  width: 100%;
+  overflow: auto;
+}
+/* line 233, ../scss/styles.scss */
+.new-post .emoji-container .emoji-link img {
+  height: 30px;
+  width: 30px;
+}
+/* line 239, ../scss/styles.scss */
+.new-post textarea {
+  margin: auto;
+  display: block;
+  width: 100%;
+}
+/* line 244, ../scss/styles.scss */
+.new-post .btn-container {
+  width: 100%;
+  margin: auto;
+  margin-top: 10px;
+}
+
+@media (max-width: 1024px) {
+  /* line 256, ../scss/styles.scss */
+  #map {
+    width: 100%;
+  }
+}
+/* line 264, ../scss/styles.scss */
+.mar-top-30 {
+  margin-top: 30px;
+}
+
+/* line 267, ../scss/styles.scss */
+.mar-bottom-30 {
+  margin-bottom: 30px;
+}

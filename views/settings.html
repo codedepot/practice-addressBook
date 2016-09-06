@@ -1,0 +1,67 @@
+<div class="row">
+  <div class="col-xs-12 col-sm-2"></div>
+  <div class="col-xs-12 col-sm-8">
+      <div class="panel-group mar-top-30" id="accordion">
+          <div class="panel panel-default">
+              <div class="panel-heading">
+                  <h4 class="panel-title">
+                      <a data-toggle="collapse" data-parent="#accordion" data-target="#collapseOne">User Infomration</a>
+                  </h4>
+              </div>
+              <div id="collapseOne" class="panel-collapse collapse in">
+                  <div class="panel-body input-control">
+                    <div class="row">
+                      <div class="col-xs-12 col-sm-4">
+                        <label for="firstName">First Name</label>
+                      </div>
+                      <div class="col-xs-12 col-sm-8">
+                        <input type="text" id="firstName">
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-xs-12 col-sm-4">
+                        <label for="lastName">Last Name</label>
+                      </div>
+                      <div class="col-xs-12 col-sm-8">
+                        <input type="text" id="lastName">
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-xs-12 col-sm-4">
+                        <label for="address">Address</label>
+                      </div>
+                      <div class="col-xs-12 col-sm-8">
+                        <input type="text" id="address">
+                      </div>
+                    </div>
+                  </div>
+              </div>
+          </div>
+          <div class="hidden panel panel-default">
+              <div class="panel-heading">
+                  <h4 class="panel-title">
+                      <a data-toggle="collapse" data-parent="#accordion" data-target="#collapseTwo">2. What is Bootstrap?</a>
+                  </h4>
+              </div>
+              <div id="collapseTwo" class="panel-collapse collapse">
+                  <div class="panel-body">
+                      <p>Bootstrap is a powerful front-end framework for faster and easier web development. It is a collection of CSS and HTML conventions. <a href="http://www.tutorialrepublic.com/twitter-bootstrap-tutorial/" target="_blank">Learn more.</a></p>
+                  </div>
+              </div>
+          </div>
+          <div class="hidden panel panel-default">
+              <div class="panel-heading">
+                  <h4 class="panel-title">
+                      <a data-toggle="collapse" data-parent="#accordion" data-target="#collapseThree">3. What is CSS?</a>
+                  </h4>
+              </div>
+              <div id="collapseThree" class="panel-collapse collapse">
+                  <div class="panel-body">
+                      <p>CSS stands for Cascading Style Sheet. CSS allows you to specify various style properties for a given HTML element such as colors, backgrounds, fonts etc. <a href="http://www.tutorialrepublic.com/css-tutorial/" target="_blank">Learn more.</a></p>
+                  </div>
+              </div>
+          </div>
+      </div>
+  <button class="btn btn-primary" ng-click="saveChanges()">Save changes</button>
+  </div>
+</div>
