@@ -11,4 +11,4 @@ The address book lets users create an account by registering. Once created they 
 
 They can create and manage their contacts using the buttons available in the contacts tab:
 
-![ScreenShot](https://github.com/codedepot/practice-addressBook/blob/master/img/add-contact-filled.JPG?raw=true)
+![ScreenShot](img/add-contact-filled.JPG?raw=true)
