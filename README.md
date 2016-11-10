@@ -7,7 +7,7 @@ https://addressbook-340d9.firebaseapp.com/
 
 It is hosted on google's servers
 
-The address book lets users create an account by registering. Once created they can log in to use the features.
+The address book lets users create an account by registering. Once created they can log in to use the features. It uses AngularJS to show a one page application and firebase to have a real time database with user authentication.
 
 They can create and manage their contacts using the buttons available in the contact tab. A dialog will open for the user to enter the information:
 
